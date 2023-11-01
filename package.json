@@ -6,6 +6,9 @@
   "author": "d-kornaukhov <d.kornaukhov@tsekh.design>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "pub": "webpack && npm version patch && npm publish"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
