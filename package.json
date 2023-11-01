@@ -1,6 +1,6 @@
 {
   "name": "tsekh-library-2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/index.js",
   "repository": "git@github.com:d-kornaukhov/library.git",
   "author": "d-kornaukhov <d.kornaukhov@tsekh.design>",
@@ -8,8 +8,8 @@
   "private": false,
   "scripts": {
     "pub": "webpack && npm version patch && npm publish",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "^18.2.0",
