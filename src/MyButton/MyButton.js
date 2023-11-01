@@ -1,11 +1,15 @@
 import React from 'react';
 
-const MyButton = ({children, color, disabled}) => {
+import './MyButton.scss'
+
+export const MyButton = ({children, color, disabled, variant='primary'}) => {
+  const mode = variant === 'primary' ? 'Btn__primary' : 'Btn__secondary';
+
+
   return (
-    <button disabled={disabled} style={{color}}>
-      {children}
+    <button className={mode}  disabled={disabled} style={{color}}>
+      {/*{children}*/}
+      {mode}
     </button>
   );
 };
-
-export default MyButton;
