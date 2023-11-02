@@ -12,11 +12,17 @@ export default {
     variant: {
       options: ['primary', 'secondary'],
       control: { type: 'radio' },
+    },
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'radio' },
     }
   },
   args: {
     variant: 'primary',
     size: 'large',
+    children: 'Кнопка',
+    disabled: false
   },
 };
 

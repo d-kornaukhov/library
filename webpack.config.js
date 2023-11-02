@@ -1,23 +1,20 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
-
   output: {
-    filename: "index.js",
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: "umd",
-    clean: true
+    libraryTarget: 'umd',
+    clean: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-
   externals: {
-    react: 'react'
+    react: 'react',
   },
-
   module: {
     rules: [
       {
@@ -27,6 +24,26 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        // use: [
+        //   {
+        //     loader: 'style-loader',
+        //   },
+        //   {
+        //     loader: 'css-loader',
+        //   },
+        //   {
+        //     loader: require.resolve('sass-loader'),
+        //     options: {
+        //       implementation: require('sass'),
+        //     },
+        //   },
+        // ]
+      },
     ],
-  }
-}
+  },
+
+
+};
