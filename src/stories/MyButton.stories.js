@@ -16,13 +16,15 @@ export default {
     size: {
       options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
-    }
+    },
+    children: { control: 'text' },
   },
   args: {
     variant: 'primary',
     size: 'large',
     children: 'Кнопка',
-    disabled: false
+    disabled: false,
+    styles: {},
   },
 };
 
