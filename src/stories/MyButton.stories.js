@@ -1,4 +1,4 @@
-import {MyButton} from '../MyButton/MyButton';
+import { MyButton } from '../MyButton/MyButton';
 
 export default {
   title: 'Example/Button2',
@@ -25,26 +25,11 @@ export default {
     children: 'Кнопка',
     disabled: false,
     styles: {},
-  },
+    onClick: null
+  }
 };
 
-export const Primary = {
-  args: {
-    ariaLabel: 'Button',
-    variant: 'primary'
-  },
+
+export const Primary = (args) => {
+  return <MyButton {...args} />;
 };
-//
-// export const Large = {
-//   args: {
-//     size: 'large',
-//     label: 'Button',
-//   },
-// };
-//
-// export const Small = {
-//   args: {
-//     size: 'small',
-//     label: 'Button',
-//   },
-// };
