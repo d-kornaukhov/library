@@ -7,8 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "git": "git add . && git commit -am \"new version\" && git push",
     "pub": "webpack && npm version patch && npm publish",
-    "storybook": "storybook dev -p 6006",
+    "start": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "resolutions": {
