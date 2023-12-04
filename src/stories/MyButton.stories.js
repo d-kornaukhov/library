@@ -18,6 +18,7 @@ export default {
       control: { type: 'radio' },
     },
     children: { control: 'text' },
+    onClick: { action: 'click' },
   },
   args: {
     variant: 'primary',
@@ -25,11 +26,18 @@ export default {
     children: 'Кнопка',
     disabled: false,
     styles: {},
-    onClick: null
   }
 };
 
+const Template = (args) => <MyButton {...args} />;
 
-export const Primary = (args) => {
-  return <MyButton {...args} />;
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: 'primary',
+  size: 'large',
+  children: 'Кнопка',
+  disabled: false,
+  styles: {},
+  onClick: null,
+  onChange: null
 };

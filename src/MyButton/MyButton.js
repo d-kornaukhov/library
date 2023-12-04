@@ -14,7 +14,7 @@ import './MyButton.scss'
 //  * @param {Function} [onChange] - Обработчик изменения кнопки.
 //  */
 
-export const MyButton = ({className, children = 'Кнопка', variant= 'primary', size = 'medium', disabled = false, styles, onClick = null, onChange}) => {
+export const MyButton = ({className, children = 'Кнопка', variant= 'primary', size = 'medium', disabled = false, styles, onClick = null, onChange = null}) => {
   const mode = variant === 'primary' ? 'Btn__primary' : 'Btn__secondary';
   const sizeClass = `Btn__${size}`;
   const disabledClass = disabled ? 'BtnDisabled' : ''
@@ -22,8 +22,14 @@ export const MyButton = ({className, children = 'Кнопка', variant= 'primar
   const buttonStyles = { ...styles };
 
   return (
-    <button className={['Btn', mode, className, sizeClass, disabledClass].join(' ')}  disabled={disabled} style={buttonStyles} onClick={() => onClick} onChange={onChange}>
-      {children}
-    </button>
+      <button
+          className={['Btn', mode, className, sizeClass, disabledClass].join(' ')}
+          disabled={disabled}
+          style={buttonStyles}
+          onClick={onClick}
+          onChange={onChange}
+      >
+        {children}
+      </button>
   );
 };

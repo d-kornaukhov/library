@@ -2,19 +2,23 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 16px;
   color: #fff;
   border: none;
   padding: 5px 10px;
+  font-weight: 600;
 
 
   &__primary {
-    background: red;
+    background: blue;
+    border: 1px solid transparent;
   }
 
   &__secondary {
-    background: blue;
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
   }
 
 
