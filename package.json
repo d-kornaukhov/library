@@ -1,6 +1,6 @@
 {
   "name": "tsekh-components",
-  "version": "0.0.10",
+  "version": "0.0.1",
   "main": "./dist/index.js",
   "repository": "git@github.com:d-kornaukhov/library.git",
   "author": "d-kornaukhov <d.kornaukhov@tsekh.design>",
