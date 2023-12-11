@@ -1,0 +1,69 @@
+.CustomSelectWrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.CustomSelect {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.SelectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  padding: 8px 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+
+  &__active {
+    border: 1px solid blue;
+  }
+}
+
+.SelectButton {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+
+  &_active {
+    transform: rotate(180deg);
+  }
+}
+
+.Arrow {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.OptionList {
+  border-radius: 10px;
+  margin: 5px 0 0 0;
+  background: rgba(blue, 0.2);
+  padding: 10px 5px;
+}
+
+.Option {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+
+  &:hover {
+    color: blue;
+    background: rgba(#000, 0.1);
+    border-radius: 10px;
+  }
+}
