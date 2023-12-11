@@ -1,0 +1,124 @@
+.SliderRangeContainer {
+  width: 500px;
+  position: relative;
+
+  p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.SliderRangeCountContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SliderRange {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 5px;
+  background-color: rgba(#000, 0.5);
+  background-image: linear-gradient(blue, blue);
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.SliderRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 1px solid #000;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+}
+
+.SliderRange::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.SliderRange::-webkit-slider-thumb:hover,
+.SliderRange::-webkit-slider-thumb:focus {
+  box-shadow: 0 0 10px -2px blue;
+}
+
+.SliderRange::-webkit-slider-thumb:active {
+  box-shadow: rgba(blue, 0.5) 0px 0px 0px 4px;
+  transition:
+          box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          left 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          bottom 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.SliderRange::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: blue;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0 blue;
+  transition: background 0.3s ease-in-out;
+}
+
+.SliderRange::-moz-range-track {
+  height: 4px;
+  border-radius: 5px;
+  background-color: rgba(#000, 0.5);
+}
+
+.SliderRange::-moz-range-progress {
+  background-image: linear-gradient(blue, white);
+}
+
+.SliderRange::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+
+.SliderRange::-ms-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: blue;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0 blue;
+  transition: background 0.3s ease-in-out;
+}
+
+.SliderRange::-ms-track {
+  height: 4px;
+  border-radius: 5px;
+  background-color: rgba(#000, 0.5);
+}
+
+.SliderRange::-ms-fill-lower {
+  background: blue;
+}
+
+.SliderRange::-ms-fill-upper {
+  background: blue;
+}
+
+.SliderRangeMarksContainer {
+  display: flex;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+}
+
+.SliderRangeMark {
+  width: 2px;
+  height: 4px;
+  background: lightgray;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+}

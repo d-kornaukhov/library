@@ -1,7 +1,7 @@
 import { CheckBox } from '../CheckBox/CheckBox';
 
 export default {
-    title: 'Example/CheckBox',
+    title: 'Components/CheckBox',
     component: CheckBox,
     parameters: {
         layout: 'centered',
@@ -16,8 +16,8 @@ export default {
         },
     },
     args: {
-        type: 'checkbox',
-        ariaLabel: 'Чекбокс',
+        type: '',
+        ariaLabel: '',
         checked: false,
         name: '',
         disabled: false,
@@ -31,6 +31,15 @@ export const Check = Template.bind({});
 Check.args = {
     type: 'checkBox',
     ariaLabel: 'Чекбокс',
+    disabled: false,
+    checked: false,
+    style: {}
+};
+
+export const Radio = Template.bind({});
+Check.args = {
+    type: 'radio',
+    ariaLabel: 'радио кнопка',
     disabled: false,
     checked: false,
     style: {}
