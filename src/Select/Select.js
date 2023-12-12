@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Select.scss';
 
-export const Select = ({ options: propsOptions, selectedOptionIndex }) => {
+export const Select = ({ options: propsOptions, selectedOptionIndex, label }) => {
   const [selectedOption, setSelectedOption] = useState(
     selectedOptionIndex !== undefined && propsOptions
       ? propsOptions[selectedOptionIndex - 1]
@@ -35,6 +35,7 @@ export const Select = ({ options: propsOptions, selectedOptionIndex }) => {
 
   return (
     <div className="CustomSelectWrapper">
+      <p>{label}</p>
       <div className={`CustomSelect ${isOpen ? 'CustomSelect__active' : ''}`}>
         <div className={`SelectHeader ${isOpen ? 'SelectHeader__active' : ''}`} onClick={handleToggle}>
           <input type="hidden" value={selectedOption ? selectedOption.value : ''} />

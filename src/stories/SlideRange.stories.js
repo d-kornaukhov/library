@@ -2,7 +2,7 @@ import React from 'react';
 import { SlideRange } from '../SlideRange/SlideRange';
 
 export default {
-  title: 'Components/SlideRange',
+  title: 'Inputs/SlideRange',
   component: SlideRange,
   parameters: {
     layout: 'centered',
@@ -42,12 +42,6 @@ export default {
       },
       description: 'Отображать текущее значение ползунка.',
     },
-    showMinMaxValues: {
-      control: {
-        type: 'boolean',
-      },
-      description: 'Отображать минимальное и максимальное значения ползунка.',
-    },
     marks: {
       control: {
         type: 'boolean',
@@ -61,7 +55,6 @@ export default {
     step: 1,
     value: 50,
     showCurrentValue: false,
-    showMinMaxValues: false,
     marks: false
   },
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SlideRange.scss';
 
-export const SlideRange = ({ minValue = 0, maxValue = 100, step = 1, value = 50, showCurrentValue = false, showMinMaxValues = false, marks = false  }) => {
+export const SlideRange = ({ minValue = 0, maxValue = 100, step = 1, value = 50, showCurrentValue = false, marks = false  }) => {
   const [stateValue, setStateValue] = useState(value || 0);
   const [marksState, setMarksState] = useState([]);
 
@@ -18,12 +18,11 @@ export const SlideRange = ({ minValue = 0, maxValue = 100, step = 1, value = 50,
   const getBackgroundSize = () => {
     const range = maxValue - minValue;
     const normalizedValue = (stateValue - minValue) / range;
-    return { backgroundSize: `${normalizedValue * 100}%` };
+    return { backgroundSize: `${normalizedValue * 97}%` };
   };
 
   return (
     <div className={'SliderRangeContainer'}>
-      {/*{showCurrentValue && <p className={'SliderRangeCurrentValue'}>{stateValue}</p>}*/}
       {marks &&
           <div className={'SliderRangeMarksContainer'}>
           {marksState.map((mark) => (
@@ -43,12 +42,8 @@ export const SlideRange = ({ minValue = 0, maxValue = 100, step = 1, value = 50,
         style={getBackgroundSize()}
         value={stateValue}
       />
-      {showMinMaxValues && (
-        <div className={'SliderRangeCountContainer'}>
-          <p>{minValue}</p>
-          <p>{maxValue}</p>
-        </div>
-      )}
+      {showCurrentValue && stateValue > 0 &&
+        <p className={'SliderRangeValue'} style={{left: `${getBackgroundSize().backgroundSize} `}}>{stateValue}</p>}
     </div>
   );
 };

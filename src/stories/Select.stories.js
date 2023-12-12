@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from '../Select/Select';
 
 export default {
-  title: 'Components/Select',
+  title: 'Inputs/Select',
   component: Select,
   parameters: {
     layout: 'centered',
@@ -22,6 +22,7 @@ export default {
       },
       description: 'Индекс выбранной опции из массива options.',
     },
+    label: { control: 'text' },
   },
 };
 
@@ -35,4 +36,5 @@ Default.args = {
     { value: 3, label: 'Option 3' },
   ],
   selectedOptionIndex: 1,
+  label: 'Заголовок'
 };

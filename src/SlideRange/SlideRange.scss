@@ -1,11 +1,6 @@
 .SliderRangeContainer {
   width: 500px;
   position: relative;
-
-  p {
-    font-size: 14px;
-    line-height: 16px;
-  }
 }
 
 .SliderRangeCountContainer {
@@ -58,8 +53,8 @@
 }
 
 .SliderRange::-moz-range-thumb {
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: blue;
   cursor: pointer;
@@ -121,4 +116,14 @@
   z-index: 0;
   position: absolute;
   top: 0;
+}
+
+.SliderRangeValue {
+  position: absolute;
+  top: -5px;
+  margin: 0;
+  font-size: 16px;
+  width: 3%;
+  text-align: center;
+  color: rgba(#000, 0.8);
 }

@@ -1,0 +1,36 @@
+.TabsContainer {
+  width: 100%;
+}
+
+.Tabs {
+  display: flex;
+}
+
+.Tab {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.TabContent {
+  margin-top: 10px;
+}
+
+.TabActive {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.TabDisabled {
+  pointer-events: none;
+  background: gray;
+  color: lightgray;
+}

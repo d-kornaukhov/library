@@ -3,7 +3,6 @@ import React from 'react';
 import './MyButton.scss'
 
 // /**
-//  // * @param {Object} props - Пропсы компонента MyButton.
 //  * @param {string} [className] - Класс для кнопки.
 //  * @param {(JSX.Element|undefined)} children - Содержимое кнопки.
 //  * @param {string} [variant='primary'] - Вариант кнопки ('primary' или 'secondary').
