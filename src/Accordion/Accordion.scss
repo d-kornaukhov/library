@@ -1,0 +1,54 @@
+.Accordion {
+  width: 300px;
+  margin-bottom:30px;
+}
+
+.AccordionSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+  background: lightgray;
+  margin-bottom: 5px;
+}
+
+.AccordionSummaryDisabled {
+  pointer-events: none;
+  background: gray;
+  color: darkgray;
+}
+
+.AccordionSummaryArrow {
+  width: 20px;
+  height: 20px;
+  transition: 0.2s ease;
+}
+
+.AccordionSummaryArrow.Expanded {
+  transform: rotate(180deg);
+}
+
+.AccordionSummary.Expanded {
+  background-color: #ddd;
+}
+
+.AccordionDetails {
+  padding: 10px;
+  overflow: hidden;
+  max-height: 0;
+  margin-bottom: 10px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.AccordionDetails.Visible {
+  max-height: 2000px;
+  height: auto;
+}
+
+.AccordionDetails.Hidden {
+  height: 0;
+  padding: 0;
+  border: 0;
+  transition: height 0.5s ease-in-out;
+}
