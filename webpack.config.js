@@ -27,23 +27,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-        // use: [
-        //   {
-        //     loader: 'style-loader',
-        //   },
-        //   {
-        //     loader: 'css-loader',
-        //   },
-        //   {
-        //     loader: require.resolve('sass-loader'),
-        //     options: {
-        //       implementation: require('sass'),
-        //     },
-        //   },
-        // ]
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'file-loader',
+        },
       },
     ],
   },
-
-
 };
