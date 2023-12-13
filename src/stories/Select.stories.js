@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from '../Select/Select';
+import { Select, SelectItem } from '../Select/Select';
 
 export default {
   title: 'Inputs/Select',
@@ -9,12 +9,6 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    options: {
-      control: {
-        type: 'object',
-      },
-      description: 'Массив опций для выбора.',
-    },
     selectedOptionIndex: {
       control: {
         type: 'number',
@@ -26,15 +20,35 @@ export default {
   },
 };
 
-const Template = (args) => <Select {...args} />;
+
+const data = [
+  {
+    value: 1,
+    children: 'Опция 1',
+  },
+  {
+    value: 2,
+    children: 'Опция 2',
+  },
+  {
+    value: 3,
+    children: 'Опция 3',
+    disabled: true
+  }
+]
+
+const Template = (args) => (
+  <Select {...args}>
+    {
+      data.map((item) => (
+        <SelectItem value={item.value} disabled={item.disabled}>{item.children}</SelectItem>
+      ))
+    }
+  </Select>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  options: [
-    { value: 1, label: 'Option 1' },
-    { value: 2, label: 'Option 2' },
-    { value: 3, label: 'Option 3' },
-  ],
   selectedOptionIndex: 1,
   label: 'Заголовок'
 };

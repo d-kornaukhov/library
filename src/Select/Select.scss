@@ -1,16 +1,19 @@
-.CustomSelectWrapper {
-  width: 100%;
+.SelectWrapper {
+  width: 200px;
   margin-bottom: 20px;
 }
 
-.CustomSelect {
+.Select {
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
-  padding: 5px 10px;
   cursor: pointer;
   font-size: 16px;
   line-height: 18px;
+
+  p {
+    margin: 0;
+  }
 }
 
 .SelectHeader {
@@ -28,10 +31,11 @@
 }
 
 .SelectButton {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   position: relative;
   transform: rotate(0deg);
+  transition: 0.4s ease;
 
   &_active {
     transform: rotate(180deg);
@@ -43,27 +47,37 @@
   top: 70%;
   left: 0;
   transform: translateY(-50%) rotate(-45deg);
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
 }
 
-.OptionList {
+.SelectOptionList {
   border-radius: 10px;
   margin: 5px 0 0 0;
-  background: rgba(blue, 0.2);
   padding: 10px 5px;
+  border: 1px solid black;
 }
 
 .Option {
   list-style: none;
   padding: 5px;
   margin: 0;
+  border-radius: 10px;
+
+  &_disabled {
+    pointer-events: none;
+    background: lightgray;
+    color: gray;
+  }
 
   &:hover {
-    color: blue;
-    background: rgba(#000, 0.1);
-    border-radius: 10px;
+    background: rgba(blue, 0.2);
   }
+}
+
+.SelectLabel {
+  margin-bottom: 10px;
+  cursor: pointer;
 }

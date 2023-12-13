@@ -43,17 +43,35 @@ export default {
   },
 };
 
+
+const data = [
+  {
+    label: 'Таб 1',
+    value: '1',
+    children: 'Контент таба 1'
+  },
+  {
+    label: 'Таб 2',
+    value: '2',
+    children: 'Контент таба 2'
+  },
+  {
+    label: 'Таб 3',
+    value: '3',
+    children: 'Контент таба 3',
+    disabled: true,
+  },
+]
+
 const Template = (args) => (
-  <Tabs {...args}>
-    <Tab label="Таб 1" value="1">
-      Контент таба 1
-    </Tab>
-    <Tab label="Таб 2" value="2">
-      Контент таба 2
-    </Tab>
-    <Tab label="Таб 3" value="3" disabled>
-      Контент таба 3
-    </Tab>
+  <Tabs {...args} defaultValue={'1'}>
+    {
+      data.map((item) => (
+        <Tab label={item.label} value={item.value} disabled={item.disabled}>
+          {item.children}
+        </Tab>
+      ))
+    }
   </Tabs>
 );
 

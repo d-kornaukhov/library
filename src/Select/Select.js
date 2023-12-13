@@ -1,59 +1,50 @@
 import React, { useState } from 'react';
 import './Select.scss';
 
-export const Select = ({ options: propsOptions, selectedOptionIndex, label }) => {
+export const SelectItem = ({ value, children, onClick, isSelected, disabled }) => (
+  <li
+    className={`Option ${isSelected && 'Option_selected'} ${disabled && 'Option_disabled'}`}
+    onClick={onClick}
+  >
+    {children}
+  </li>
+);
+
+export const Select = ({ children, selectedOptionIndex, label }) => {
   const [selectedOption, setSelectedOption] = useState(
-    selectedOptionIndex !== undefined && propsOptions
-      ? propsOptions[selectedOptionIndex - 1]
+    selectedOptionIndex !== undefined && children
+      ? children[selectedOptionIndex - 1].props.value
       : null
   );
   const [isOpen, setIsOpen] = useState(false);
-
-  const options = propsOptions || [
-    {
-      value: 1,
-      label: 'Опция 1',
-    },
-    {
-      value: 2,
-      label: 'Опция 2',
-    },
-    {
-      value: 3,
-      label: 'Опция 3',
-    },
-  ];
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
     setIsOpen(false);
   };
 
   return (
-    <div className="CustomSelectWrapper">
-      <p>{label}</p>
-      <div className={`CustomSelect ${isOpen ? 'CustomSelect__active' : ''}`}>
+    <div className="SelectWrapper">
+      <p onClick={handleToggle} className={'SelectLabel'}>{label}</p>
+      <div className={`Select ${isOpen ? 'Select__active' : ''}`}>
         <div className={`SelectHeader ${isOpen ? 'SelectHeader__active' : ''}`} onClick={handleToggle}>
-          <input type="hidden" value={selectedOption ? selectedOption.value : ''} />
-          <p> {selectedOption ? selectedOption.label : 'Выберите опцию'}</p>
+          <input type="hidden" value={selectedOption || ''} />
+          <p className={'SelectHeaderOption'}> {selectedOption ? children.find(option => option.props.value === selectedOption).props.children : 'Выберите опцию'}</p>
           <div className={`SelectButton ${isOpen ? 'SelectButton_active' : ''}`}>
             <div className="Arrow"></div>
           </div>
         </div>
         {isOpen && (
-          <ul className="OptionList">
-            {options.map((option) => (
-              <li
-                key={option.value}
-                className={`Option ${selectedOption === option ? 'Option_selected' : ''}`}
-                onClick={() => handleOptionSelect(option)}
-              >
-                {option.label}
-              </li>
+          <ul className="SelectOptionList">
+            {React.Children.map(children, (child) => (
+              React.cloneElement(child, {
+                onClick: () => handleOptionSelect(child.props.value),
+                isSelected: child.props.value === selectedOption,
+              })
             ))}
           </ul>
         )}
