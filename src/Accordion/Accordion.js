@@ -25,7 +25,7 @@ export const Accordion = ({ children }) => {
 export const AccordionSummary = ({ children, expanded, onToggle, id, icon, disabled }) => (
   <div className={`AccordionSummary ${expanded && !disabled ? 'Expanded' : ''} ${disabled ? 'AccordionSummaryDisabled' : ''}`} onClick={onToggle} id={id}>
     {children}
-    <img className={`AccordionSummaryArrow ${expanded ? 'Expanded' : ''}`} src={icon ? icon : Icon} alt={'accordion arrow'} />
+    {/*<img className={`AccordionSummaryArrow ${expanded ? 'Expanded' : ''}`} src={icon ? icon : Icon} alt={'accordion arrow'} />*/}
   </div>
 );
 
