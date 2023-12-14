@@ -33,13 +33,19 @@ export const Progress = ({ color, width, height, st, progress = 0, variant = 'de
 };
 
 
-export const LinearProgress = ({ color, width, height, st }) => {
+export const LinearProgress = ({ color, st, value, variant, showValue }) => {
   return (
     <div className={'LinearProgressWrapper'}>
       <div className="LinearProgress"
-           style={{background: `${color}`, width: `${width}px`, height: `${height}px`, ...st}}>
-        <div className="LinearProgressBar"></div>
+           style={{...st}}>
+        <div className={`LinearProgressBar ${variant === 'determinate' && 'LinearProgressBarValue'}`} style={variant === 'determinate' ? { width: `${value}%` } : {}}
+        ></div>
       </div>
+      {
+        variant === 'determinate' && showValue && (
+          <p className={'LinearProgressValue'}>{value}%</p>
+        )
+      }
     </div>
   );
 };

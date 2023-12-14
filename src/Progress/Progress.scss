@@ -74,11 +74,24 @@
 
 .LinearProgressBar {
   position: absolute;
+  left: 0;
+  top: 0;
   height: 100%;
   width: 50%;
   background: cornflowerblue;
   transform: translateX(-100%);
   animation: linearProgressAnimation 1s linear infinite;
+}
+
+.LinearProgressBarValue {
+  animation: none;
+  transform: none;
+  width: 0;
+}
+
+.LinearProgressValue {
+  margin-left: 10px;
+  font-size: 14px;
 }
 
 @keyframes linearProgressAnimation {
