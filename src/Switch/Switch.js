@@ -3,14 +3,14 @@ import './Switch.scss';
 
 export const Switch = ({ checked, disabled, onChange, label }) => {
   const handleClick = () => {
-    if (!disabled && onChange) {
+    if (!disabled) {
       onChange(!checked);
     }
   };
 
   return (
-    <div className={`SwitchWrapper`} onClick={handleClick}>
-      <div className={`Switch ${checked ? 'SwitchChecked' : ''} ${disabled ? 'SwitchDisabled' : ''}`}>
+    <div className={`SwitchWrapper`}>
+      <div className={`Switch ${checked ? 'SwitchChecked' : ''} ${disabled ? 'SwitchDisabled' : ''}`} onClick={handleClick}>
         <input
           type="checkbox"
           checked={checked}

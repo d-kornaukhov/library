@@ -5,6 +5,7 @@ import { Select, SelectItem } from './Select/Select';
 import { Switch } from './Switch/Switch';
 import { Tabs, Tab } from './Tabs/Tabs';
 import { Accordion } from './Accordion/Accordion';
+import { Progress, LinearProgress } from './Progress/Progress';
 
 export {
   MyButton,
@@ -15,5 +16,6 @@ export {
   Switch,
   Tabs,
   Tab,
-  Accordion
+  Accordion,
+  Progress, LinearProgress
 }
