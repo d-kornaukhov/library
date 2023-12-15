@@ -1,0 +1,30 @@
+/* PaginationComponent.css */
+
+.PaginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.PaginationPageButton {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  &_active {
+    background: #007bff;
+    color: #fff;
+  }
+}
+
+.PaginationPageButtonPrev {
+}
+
+.PaginationPageButtonNext {
+}
+
+.PaginationPageButton:disabled {
+  cursor: not-allowed;
+}

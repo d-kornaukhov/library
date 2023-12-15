@@ -6,6 +6,7 @@ import { Switch } from './Switch/Switch';
 import { Tabs, Tab } from './Tabs/Tabs';
 import { Accordion } from './Accordion/Accordion';
 import { Progress, LinearProgress } from './Progress/Progress';
+import { Pagination } from './Pagination/Pagination';
 
 export {
   MyButton,
@@ -17,5 +18,6 @@ export {
   Tabs,
   Tab,
   Accordion,
-  Progress, LinearProgress
+  Progress, LinearProgress,
+  Pagination
 }
