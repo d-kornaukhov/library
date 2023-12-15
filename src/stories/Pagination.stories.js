@@ -67,6 +67,30 @@ Default.args = {
   visiblePages: 0,
   hidePrevButton: false,
   hideNextButton: false,
+  showFirstButton: false,
+  showLastButton: false,
+  onPageChange: (page) => console.log(`Page changed to: ${page}`),
+};
+
+export const NoPrevNextButtons = Template.bind({});
+NoPrevNextButtons.args = {
+  itemsPerPage: 10,
+  totalItems: 100,
+  visiblePages: 0,
+  hidePrevButton: true,
+  hideNextButton: true,
+  showFirstButton: false,
+  showLastButton: false,
+  onPageChange: (page) => console.log(`Page changed to: ${page}`),
+};
+
+export const FirstAndLastButtons = Template.bind({});
+FirstAndLastButtons.args = {
+  itemsPerPage: 10,
+  totalItems: 100,
+  visiblePages: 0,
+  hidePrevButton: false,
+  hideNextButton: false,
   showFirstButton: true,
   showLastButton: true,
   onPageChange: (page) => console.log(`Page changed to: ${page}`),
