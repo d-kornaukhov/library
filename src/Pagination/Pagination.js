@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+
+import IconFirstLast from '../assets/img/pagination-arrow-double.png'
+import IconPrevNext from '../assets/img/pagination-arrow.png'
+
 import './Pagination.scss';
 
-export const Pagination = ({itemsPerPage, totalItems, onPageChange, visiblePages, hidePrevButton, hideNextButton, showFirstButton, showLastButton,}) => {
+export const Pagination = ({itemsPerPage, totalItems, onPageChange, visiblePages, hidePrevButton, hideNextButton, showFirstButton, showLastButton, IconFirst, IconNext}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -64,40 +68,40 @@ export const Pagination = ({itemsPerPage, totalItems, onPageChange, visiblePages
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
         >
-          &lt;&lt;
+          <img src={IconFirst ? IconFirst : IconFirstLast} alt={'pagination button first'} />
         </button>
       )}
 
       {hidePrevButton ? null : (
-        <button
-          className={`PaginationPageButton PaginationPageButtonPrev`}
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          &lt;
-        </button>
+          <button
+              className={`PaginationPageButton PaginationPageButtonPrev`}
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+          >
+            <img src={IconNext ? IconNext : IconPrevNext} alt={'pagination button prev'}/>
+          </button>
       )}
 
       {renderPageButtons()}
 
       {hideNextButton ? null : (
-      <button
-        className="PaginationPageButton PaginationPageButtonNext"
-        onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      >
-        &gt;
-      </button>
+          <button
+              className="PaginationPageButton PaginationPageButtonNext"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+          >
+            <img src={IconNext ? IconNext : IconPrevNext} alt={'pagination button next'}/>
+          </button>
       )}
 
       {showLastButton && (
-        <button
-          className="PaginationPageButton PaginationPageButtonLast"
-          onClick={() => handlePageChange(totalPages)}
-          disabled={currentPage === totalPages}
-        >
-          &gt;&gt;
-        </button>
+          <button
+              className="PaginationPageButton PaginationPageButtonLast"
+              onClick={() => handlePageChange(totalPages)}
+              disabled={currentPage === totalPages}
+          >
+            <img src={IconFirst ? IconFirst : IconFirstLast} alt={'pagination button last'}/>
+          </button>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Progress.scss';
 
-export const Progress = ({ color, width, height, st, progress = 0, variant = 'determinate' }) => {
+export const Progress = ({ color, width, height, st, value = 0, variant = 'determinate' }) => {
 
   const dashArray = 2 * Math.PI * 20.2;
 
@@ -9,7 +9,7 @@ export const Progress = ({ color, width, height, st, progress = 0, variant = 'de
     <div className={'ProgressWrapper'}>
       {variant === 'determinate' && (
         <div className="ProgressLabel">
-          {`${Math.round(progress)}%`}
+          {`${Math.round(value)}%`}
         </div>
       )}
       <div className={`Progress ${variant === 'determinate' && 'ProgressNoAnim'}`} style={{ color: `${color}`, width: `${width}px`, height: `${height}px`, ...st }}>
@@ -23,7 +23,7 @@ export const Progress = ({ color, width, height, st, progress = 0, variant = 'de
             strokeWidth="3.6"
             style={{
               strokeDasharray: variant === 'determinate' ? `${dashArray}px` : '80px, 200px',
-              strokeDashoffset: variant === 'determinate' ? `${((100 - progress) / 100) * dashArray}px` : '0',
+              strokeDashoffset: variant === 'determinate' ? `${((100 - value) / 100) * dashArray}px` : '0',
             }}
           ></circle>
         </svg>

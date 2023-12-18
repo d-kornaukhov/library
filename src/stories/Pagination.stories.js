@@ -2,7 +2,7 @@ import React from 'react';
 import { Pagination } from '../Pagination/Pagination';
 
 export default {
-  title: 'Pagination',
+  title: 'Components/Pagination',
   component: Pagination,
   parameters: {
     layout: 'centered',
@@ -55,6 +55,18 @@ export default {
       action: 'onPageChange',
       description: 'Функция обратного вызова, вызываемая при изменении страницы.',
     },
+    IconFirst: {
+      control: {
+        type: 'string',
+      },
+      description: 'Иконка для кнопок первой и последней страницы'
+    },
+    IconNext: {
+      control: {
+        type: 'string',
+      },
+      description: 'Иконка для кнопок предыдущей и следущей страницы'
+    }
   },
 };
 
@@ -69,6 +81,8 @@ Default.args = {
   hideNextButton: false,
   showFirstButton: false,
   showLastButton: false,
+  IconFirst: '',
+  IconNext: '',
   onPageChange: (page) => console.log(`Page changed to: ${page}`),
 };
 
@@ -81,6 +95,8 @@ NoPrevNextButtons.args = {
   hideNextButton: true,
   showFirstButton: false,
   showLastButton: false,
+  IconFirst: '',
+  IconNext: '',
   onPageChange: (page) => console.log(`Page changed to: ${page}`),
 };
 
@@ -93,5 +109,21 @@ FirstAndLastButtons.args = {
   hideNextButton: false,
   showFirstButton: true,
   showLastButton: true,
+  IconFirst: '',
+  IconNext: '',
+  onPageChange: (page) => console.log(`Page changed to: ${page}`),
+};
+
+export const ReplaceIcons = Template.bind({});
+ReplaceIcons.args = {
+  itemsPerPage: 10,
+  totalItems: 100,
+  visiblePages: 0,
+  hidePrevButton: false,
+  hideNextButton: false,
+  showFirstButton: true,
+  showLastButton: true,
+  IconFirst: 'https://img.icons8.com/fluency/48/double-right.png',
+  IconNext: 'https://img.icons8.com/color/48/forward.png',
   onPageChange: (page) => console.log(`Page changed to: ${page}`),
 };
