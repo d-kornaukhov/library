@@ -7,6 +7,7 @@ import { Tabs, Tab } from './Tabs/Tabs';
 import { Accordion } from './Accordion/Accordion';
 import { Progress, LinearProgress } from './Progress/Progress';
 import { Pagination } from './Pagination/Pagination';
+import { Skeleton } from './Skeleton/Skeleton';
 
 export {
   MyButton,
@@ -19,5 +20,6 @@ export {
   Tab,
   Accordion,
   Progress, LinearProgress,
-  Pagination
+  Pagination,
+  Skeleton
 }

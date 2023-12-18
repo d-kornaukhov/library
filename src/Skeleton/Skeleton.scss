@@ -1,0 +1,50 @@
+.Skeleton {
+  background-color: rgba(255, 255, 255, 0.13);
+  animation: 2s ease-in-out 0.5s infinite normal none running defaultAnimation;
+  border-radius: 50px;
+  width: 100%;
+  height: auto;
+
+  &_wave {
+    position: relative;
+    overflow: hidden;
+    animation: none;
+
+    &:before {
+      height: inherit;
+      animation: 2s linear 0.5s infinite normal none running waveAnimation;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+      content: "";
+      position: absolute;
+      transform: translateX(-100%);
+      inset: 0;
+    }
+  }
+}
+
+@keyframes defaultAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+     opacity: 1;
+   }
+}
+
+@keyframes waveAnimation  {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+     transform: translateX(100%);
+   }
+}
